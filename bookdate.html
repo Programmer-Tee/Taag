@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+   
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+    <script type="text/javascript">
+       (function(){
+          emailjs.init("user_VxaDZHxpVdF4EwLhV6kdx");
+       })();
+    </script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,900|Display+Playfair:200,300,400,700"> 
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    
+  
+
+  <script src="sweetalert2.all.min.js"></script>
+  <!-- Optional: include a polyfill for ES6 Promises for IE11 -->
+  <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+
+  <script>
+      
+    Swal.fire({
+position: 'top-end',
+icon: 'success',
+title: 'Your work has been saved',
+showConfirmButton: false,
+timer: 1500
+})
+
+
+  </script>
+  </head>
+  <body>
+  
+  <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+    
+    <header class="site-navbar py-3" role="banner">
+
+      <div class="container">
+        <div class="row align-items-center">
+          
+          <div class="col-11 col-xl-2">
+            <h1 class="mb-0"><a href="index.html" class="text-white h2 mb-0">TaagLogistixs</a></h1>
+          </div>
+          <div class="col-12 col-md-10 d-none d-xl-block">
+            <nav class="site-navigation position-relative text-right" role="navigation">
+
+              <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li class="has-children">
+                  <a href="services.html">Services</a>
+                  <ul class="dropdown">
+                    <li><a href="services.html">Courier Services</a></li>
+                    <li><a href="services.html">Truck Haulage</a></li>
+                    <li><a href="services.html">Storage Facility</a></li>
+                    <li><a href="services.html">Order Processing</a></li>
+                  </ul>
+                </li>
+                <li><a href="partners.html">Partners</a></li>
+                <!-- <li><a href="blog.html">Blog</a></li> -->
+
+
+                <li><a href="contact.html">Contact</a></li>
+                <li class="active"><a href="bookdate.html">Book a date</a></li>
+
+              </ul>
+            </nav>
+          </div>
+
+
+          <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a></div>
+
+          </div>
+
+        </div>
+      </div>
+      
+    </header>
+
+  
+
+    <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url(images/buswhite.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+      <div class="container">
+        <div class="row align-items-center justify-content-center text-center">
+
+          <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
+            <h1 class="text-white font-weight-light text-uppercase font-weight-bold">Book a date</h1>
+            <p class="breadcrumb-custom"><a href="index.html">Home</a> <span class="mx-2">&gt;</span> <span>Book a date</span></p>
+          </div>
+        </div>
+      </div>
+    </div>  
+
+    
+    <div class="site-section bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7 mb-5">
+
+<!--            
+        
+        
+        
+            <form >
+                <h1>PICK UP DETAILS</h1>
+                <label for="pickUpName">Pick Up Name:</label><br>
+                <input type="text" id="pickUpName" name="pickUpName" ><br>
+                <label for="pickUpNumber">Pick Up Number:</label><br>
+                <input type="text" id="pickUpNumber" name="pickUpNumber" ><br><br>
+
+                <label for="pickUpAdd">Pick Up Address:</label><br>
+                <input type="text" id="pickUpAdd" name="pickUpAdd" ><br><br>
+                
+                <label for="item">Item Description:</label><br>
+                <input type="text" id="item" name="item" ><br><br>
+                
+
+                <h1>DROP OFF DETAILS</h1>
+                <label for="dropOffName">Drop Off Name:</label><br>
+                <input type="text" id="dropOffName" name="dropOffName" ><br>
+                <label for="dropOffNumber">Drop off Number:</label><br>
+                <input type="text" id="dropOffNumber" name="dropOffNumber" ><br><br>
+
+                <label for="dropOffAdd">Drop Off Address:</label><br>
+
+                <input type="text" id="dropOffAdd" name="dropOffAdd" ><br><br>
+               
+
+
+                <h1>YOUR DETAILS</h1>
+                <h3>This is to cofirm your order.</h3>
+
+                <label for="CustomerName">Customer Name:</label><br>
+                <input type="text" id="CustomerName" name="CustomerName" ><br>
+                <label for="CustomerNumber">Phone Number:</label><br>
+                <input type="text" id="dropOffNumber" name="dropOffNumber" ><br><br>
+
+                <label for="CustomerEmail"> Email:</label><br>
+                <input type="text" id="CustomerEmail" name="CustomerEmail" ><br><br>
+                
+
+                <input type="submit" value="Send Message" onclick="getInputValue()" class="btn btn-primary py-2 px-4 text-white">
+            </form> 
+         -->
+        
+        
+        
+        
+            <form action="#" id="myform" class="p-5 bg-white">
+
+
+              <label for="birthday">Date of Delivery:</label>
+  <input type="date" id="dateofDelivery" name="birthday">
+
+              <br><br>
+
+               <h1>Pick Up details</h1>
+             
+
+              <label for ="fname"> Name </label>
+              <textarea rows="1" cols="70" id="fname" ></textarea>
+
+            
+             
+              <br> <br>
+              <label for ="pickUpNumber"> Number </label>
+              <input type="text" id= "pickUpNumber" >
+
+              <!-- <a href="mailto:obeisuntabithaa@gmail.com">Send me an email</a> -->
+
+              <br> <br>
+              <label for ="pickUpAddress"> Address</label>
+              <textarea rows="1" cols="70" id="pickUpAddress" ></textarea>
+
+
+              <br> <br>
+              <label for ="item"> Item description </label>
+              <textarea rows="1" cols="70" id="item" ></textarea>
+
+
+  <br>  <br>
+              <h1>Drop Off details</h1>
+             
+
+              <label for ="dropOffName"> Name </label>
+              <textarea rows="1" cols="70" id="dropOffName"></textarea>
+             
+              <br> <br>
+              <label for ="dropOffNumber"> Number </label>
+              <input type="text" id= "dropOffNumber"  >
+
+              <!-- <a href="mailto:obeisuntabithaa@gmail.com">Send me an email</a> -->
+
+              <br> <br>
+              <label for ="dropOffAddress" > Address</label>
+              <textarea rows="1" cols="70" id="dropOffAddress" ></textarea>
+
+
+              <br> <br>
+
+
+              <h1>Your details</h1>
+              <h5>This is to confirm your request. A confirmation mail will be sent to you </h5>
+
+              <label for ="customerName"> Name </label>
+              <textarea rows="1" cols="70" id="customerName" ></textarea>
+             
+              <br> <br>
+              <label for ="customerNumber"> Number </label>
+              <input type="text" id= "customerNumber"  >
+
+              <!-- <a href="mailto:obeisuntabithaa@gmail.com">Send me an email</a> -->
+
+              <br> <br>
+              <label for ="customerEmail"> Email</label>
+              
+              <textarea rows="1" cols="70" id="customerEmail" ></textarea>
+
+
+              <br> <br>
+
+
+      <input type="button" onclick="getInputValue()"  value="Submit Order">
+  
+
+
+
+
+              <div id="loader"></div>
+                
+                <div style="display:none;" id="myDiv" class="animate-bottom">
+                  <!-- <h2>Tada!</h2> -->
+                  <!-- <p>Some text in my newly loaded page..</p> --> -->
+                </div>
+            </form>
+        
+        </div>
+          <div class="col-md-5">
+            
+            <!-- <div class="p-4 mb-3 bg-white">
+              <p class="mb-0 font-weight-bold">Address</p>
+              <p class="mb-4">203 Fake St. Mountain View, San Francisco, California, USA</p>
+
+              <p class="mb-0 font-weight-bold">Phone</p>
+              <p class="mb-4"><a href="#">+2347052167543</a></p>
+
+              <p class="mb-0 font-weight-bold">Email Address</p>
+              <p class="mb-0"><a href="#">taaglogistixs@gmail.com</a></p>
+
+              <p class="mb-0 font-weight-bold">Instagram</p>
+              <p class="mb-0"><a href="#">@taaglogistixs</a></p>
+
+              <p class="mb-0 font-weight-bold">Twitter</p>
+              <p class="mb-0"><a href="#">@taaglogistixs</a></p>
+
+
+
+            </div> -->
+<!--             
+            <div class="p-4 mb-3 bg-white">
+              <h3 class="h5 text-black mb-3">More Info</h3>
+              <p>All messages will be responded to within 24 hours. If no response is gotten, resend message.</p>
+              <p><a href="#" class="btn btn-primary px-4 py-2 text-white">Learn More</a></p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div> -->
+    
+    <!-- <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9">
+            <div class="row">
+              <div class="col-md-3">
+                <h2 class="footer-heading mb-4">Quick Links</h2>
+                <ul class="list-unstyled">
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Services</a></li>
+                  <li><a href="#">Testimonials</a></li>
+                  <li><a href="#">Contact Us</a></li>
+                </ul>
+              </div>
+              <div class="col-md-3">
+                <h2 class="footer-heading mb-4">Products</h2>
+                <ul class="list-unstyled">
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Services</a></li>
+                  <li><a href="#">Testimonials</a></li>
+                  <li><a href="#">Contact Us</a></li>
+                </ul>
+              </div>
+              <div class="col-md-3">
+                <h2 class="footer-heading mb-4">Features</h2>
+                <ul class="list-unstyled">
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Services</a></li>
+                  <li><a href="#">Testimonials</a></li>
+                  <li><a href="#">Contact Us</a></li>
+                </ul>
+              </div>
+              <div class="col-md-3">
+                <h2 class="footer-heading mb-4">Follow Us</h2>
+                <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
+                <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
+                <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+                <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <h2 class="footer-heading mb-4">Subscribe Newsletter</h2>
+            <form action="#" method="post">
+              <div class="input-group mb-3">
+                <input type="text" class="form-control border-secondary text-white bg-transparent" placeholder="Enter Email" aria-label="Enter Email" aria-describedby="button-addon2">
+                <div class="input-group-append">
+                  <button class="btn btn-primary text-white" type="button" id="button-addon2">Send</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="row pt-5 mt-5 text-center">
+          <div class="col-md-12">
+            <div class="border-top pt-5">
+         
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </footer> -->
+  </div>
+
+
+
+
+
+
+
+<style>
+  /* Center the loader */
+  #loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 500px;
+    height: 400px;
+    margin: -75px 0 0 -75px;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    display: none;    }
+  
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Add animation to "page content" */
+  .animate-bottom {
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 1s;
+    animation-name: animatebottom;
+    animation-duration: 1s
+  }
+  
+  @-webkit-keyframes animatebottom {
+    from { bottom:-100px; opacity:0 } 
+    to { bottom:0px; opacity:1 }
+  }
+  
+  @keyframes animatebottom { 
+    from{ bottom:-100px; opacity:0 } 
+    to{ bottom:0; opacity:1 }
+  }
+  
+  #myDiv {
+    display: none;
+    text-align: left ;
+  }
+  </style>
+
+ 
+
+
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/jquery.countdown.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/bootstrap-datepicker.min.js"></script>
+  <script src="js/aos.js"></script>
+
+  <script src="js/main.js"></script>
+    
+
+
+
+
+  </body>
+
+  
+  <script>
+
+    //sending data to configured gmail
+    
+
+
+
+        
+
+//sending data to configured gmail
+function getInputValue(){
+    // Selecting the input element and get its value 
+    var inputFirstName = document.getElementById("fname").value;
+
+    var pickUpNumber = document.getElementById("pickUpNumber").value;
+
+    
+
+    var pickUpAddress = document.getElementById("pickUpAddress").value;
+
+    var dropOffAddress = document.getElementById("dropOffAddress").value;
+
+    var dropOffName = document.getElementById("dropOffName").value;
+
+    var dropOffNumber = document.getElementById("dropOffNumber").value;
+
+    var customerName = document.getElementById("customerName").value;
+    var customerNumber = document.getElementById("customerNumber").value;
+    var customerEmail = document.getElementById("customerEmail").value;
+
+    var dateofDelivery = document.getElementById("dateofDelivery").value;
+
+    var item = document.getElementById("item").value;
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    // var inputLastName= document.getElementById("lname").value;
+    // var inputEmail= document.getElementById("email").value;
+    // var inputMessage =document.getElementById("message").value;
+    // var inputPhone=document.getElementById("phone").value;
+
+
+
+    console.log(inputFirstName);
+    console.log(pickUpAddress);
+    console.log(pickUpNumber);
+    console.log(dropOffAddress);
+    console.log(dropOffName);
+    console.log(dropOffNumber);
+    console.log(customerName);
+    console.log(customerNumber);
+    console.log(customerEmail);
+    console.log(item);
+
+    console.log(dateofDelivery);
+
+
+    document.getElementById("myform").reset();
+
+
+    var myVar;
+
+if(inputFirstName && pickUpAddress && pickUpNumber && dropOffAddress && dropOffName && dropOffNumber && customerNumber && customerEmail&& item) {
+  
+  function showLoader() {
+  document.getElementById("loader").style.display = "block";
+}
+
+ function hideLoader() {
+  document.getElementById("loader").style.display = "none";
+}
+  
+  
+  var template_params = {
+   "customerName": customerName,
+   "customerEmail": customerEmail,
+   "customerNumber": customerNumber,
+   "pickUpAddress": pickUpAddress,
+   "pickUpNumber": pickUpNumber,
+   "pickUpName": inputFirstName,
+   "dropOffAddress": dropOffAddress,
+   "dropOffName": dropOffName,
+   "dropOffNumber": dropOffNumber,
+   "item": item,
+   "DateOfDelivery": dateofDelivery
+}
+
+
+var service_id = "default_service";
+var template_id = "taagorders";
+showLoader()
+emailjs.send(service_id, template_id, template_params).then(function(success) {
+  hideLoader()
+  console.log(success, 'this is success')
+Swal.fire({
+position: 'top-end',
+icon: 'success',
+title: 'Order Received',
+body:'A confirmation mail will be sent to you',
+timer: 2500
+
+
+})
+}
+, 
+function(err) {
+  hideLoader();
+  console.log(err, 'this is error')
+Swal.fire({
+position: 'top-end',
+icon: 'success',
+title: 'failed',
+showConfirmButton: false,
+timer: 1500
+})
+});
+} else {
+Swal.fire({
+position: 'top-end',
+icon: 'failed',
+title: 'Fill up all fields',
+showConfirmButton: false,
+timer: 3000
+})
+}
+
+// Displaying the value
+// alert(inputFirstName);
+
+
+
+}
+    
+</script>
+
+
+</html>

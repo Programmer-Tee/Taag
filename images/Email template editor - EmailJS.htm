@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)https://dashboard.emailjs.com/templates/Fy70YGHCU3 -->
+<html ng:controller="AppController" class="ng-scope"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+<title ng-bind="title + &#39; - EmailJS&#39;" class="ng-binding">Email template editor - EmailJS</title>
+<link rel="shortcut icon" href="https://dashboard.emailjs.com/img/favicon.png">
+<link rel="stylesheet" href="./Email template editor - EmailJS_files/style-5e48aa33c3.css">
+<link href="./Email template editor - EmailJS_files/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="./Email template editor - EmailJS_files/css" rel="stylesheet" type="text/css">
+<link href="./Email template editor - EmailJS_files/default.min.css" rel="stylesheet">
+<script type="text/javascript" async="" src="./Email template editor - EmailJS_files/recaptcha__en.js"></script><script type="text/javascript" async="" src="./Email template editor - EmailJS_files/recaptcha__en(1).js"></script><script async="" src="./Email template editor - EmailJS_files/analytics.js"></script><script async="" charset="utf-8" src="./Email template editor - EmailJS_files/saved_resource" type="text/javascript"></script><script type="text/javascript">
+window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+	d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+	_.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
+	$.src="//v2.zopim.com/?3XrcqyphQROct5lKeX97xm7zlXwwiI2s";z.t=+new Date;$.
+	type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
+</script>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-58692809-1', 'dashboard.emailjs.com');
+</script>
+<style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style><script async="" src="./Email template editor - EmailJS_files/widget.js"></script><link rel="stylesheet" href="./Email template editor - EmailJS_files/skin.min.css"></head>
+<body>
+<!-- ngIf: !user -->
+<!-- ngIf: user --><div id="main" class="inner ng-scope" ng:if="user" ng:init="init()">
+<table id="layout" width="100%">
+<tbody><tr id="header">
+<th class="left">
+<h1 id="logo"><a href="https://dashboard.emailjs.com/">EmailJS</a></h1>
+</th>
+<th class="right">
+<div class="relative inner-content">
+<div id="header-quota">
+<!-- ngIf: quota.remaining --><span ng:if="quota.remaining" class="ng-binding ng-scope">Quota remaining: 175 emails</span><!-- end ngIf: quota.remaining -->
+<!-- ngIf: !quota.remaining -->
+<!-- ngIf: free_user --><button class="secondary ng-scope" ng:if="free_user" ng:click="upgradePlan(false)">Upgrade now</button><!-- end ngIf: free_user -->
+</div>
+<ul id="header-menu">
+<!-- ngIf: user --><li ng:if="user" id="welcome" class="ng-scope">Welcome, <a style="font-weight: normal" href="https://dashboard.emailjs.com/account" class="ng-binding">Obeisun Tabitha</a>!<span id="HW_badge_cont" class="HW_badge_cont HW_visible" style=""><span id="HW_badge" class="HW_badge HW_softHidden" style="" data-count-unseen=""></span></span></li><!-- end ngIf: user -->
+<li><a href="https://www.emailjs.com/docs/" target="_blank" ng:click="track(&#39;Docs&#39;)">Docs</a></li>
+<li><a ng:click="onContactUs()">Contact us</a></li>
+<!-- ngIf: !user -->
+<!-- ngIf: !user -->
+<!-- ngIf: user --><li ng:if="user" class="ng-scope"><a ng:click="logout()">Sign out</a></li><!-- end ngIf: user -->
+<!-- ngIf: user && data.settings.use_custom_dashboard -->
+</ul>
+</div>
+</th>
+</tr>
+<tr valign="top">
+<td id="main-menu" width="250">
+<a class="item fa fa-plug" href="https://dashboard.emailjs.com/" ng:class="{selected: isSelectedView(&#39;/&#39;)}" style="">Email Services</a>
+<a class="item fa fa-file-text-o selected" href="https://dashboard.emailjs.com/templates" ng:class="{selected: isSelectedView(&#39;/templates&#39;)}" style="">Email Templates</a>
+<a class="item fa fa-newspaper-o" href="https://dashboard.emailjs.com/contacts" ng:class="{selected: isSelectedView(&#39;/contacts&#39;)}" style="">Contacts</a>
+<a class="item fa fa-history" href="https://dashboard.emailjs.com/history" ng:class="{selected: isSelectedView(&#39;/history&#39;)}" style="">Email History</a>
+<a class="item fa fa-list-ul" href="https://dashboard.emailjs.com/events" ng:class="{selected: isSelectedView(&#39;/events&#39;)}" style="">Events</a>
+<a class="item fa fa-area-chart" href="https://dashboard.emailjs.com/statistics" ng:class="{selected: isSelectedView(&#39;/statistics&#39;)}">Statistics</a>
+<a class="item fa fa-code" href="https://dashboard.emailjs.com/integration" ng:class="{selected: isSelectedView(&#39;/integration&#39;)}">Installation</a>
+<a class="item fa fa-user" href="https://dashboard.emailjs.com/account" ng:class="{selected: isSelectedView(&#39;/account&#39;)}" style="">Account</a>
+</td>
+<td id="main-content">
+<div id="main-view-container">
+<!-- ngView: --><div ng:view="" id="main-view" class="inner-content ng-scope" style="">
+<form ng:init="initTemplate();" id="email-template" class="email-template ng-scope ng-valid ng-valid-required ng-valid-parse ng-dirty" name="email_template_form" ng:keydown="_idError = null;" ng:submit="saveTemplate(template,this)" async-loading="" style="">
+<a href="https://dashboard.emailjs.com/templates" class="back"><span class="fa fa-chevron-left"></span>back</a>
+<br><br>
+<h1>
+<editable-field ng:model="template.name" ng:init="template.name=template.name||&#39;Untitled&#39;" class="ng-pristine ng-untouched ng-valid ng-isolate-scope ng-not-empty"><span class="value">TaagOrders</span><a class="action icon onhover fa fa-pencil"></a></editable-field>
+<div class="action-container">
+<button type="button" class="secondary fa fa-code" ng:disabled="_idError || !email_template_form.$valid" ng:click="onCopyCode(template)">
+Copy code
+</button>
+<div button-dropdown="">
+<button type="button" class="secondary fa fa-jsfiddle ng-isolate-scope" ng:disabled="_idError || !email_template_form.$valid" ng:click="onTestTemplate(template, email_template_form.$dirty, &#39;jsfiddle&#39;, &#39;sendForm&#39;)" confirm="You have unsaved changes that will not be included in JSFiddle.&lt;br&gt;&lt;br&gt;Continue?" confirm-enable="email_template_form.$dirty">
+Code playground
+</button>
+<button class="secondary arrow" ng:click="track(&#39;JSFiddle dropdown&#39;)" ng:disabled="_idError || !email_template_form.$valid">&#9660;</button>
+<ul class="options">
+<li ng:class="{disabled: isUploadAttachment(template)}" ng:click="onTestTemplate(template, email_template_form.$dirty, &#39;jsfiddle&#39;, &#39;send&#39;)" confirm="You have unsaved changes that will not be included in JSFiddle.&lt;br&gt;&lt;br&gt;Continue?" confirm-enable="email_template_form.$dirty" class="ng-isolate-scope">Use emailjs.send()</li>
+<li ng:click="onTestTemplate(template, email_template_form.$dirty, &#39;jsfiddle&#39;, &#39;sendForm&#39;)" confirm="You have unsaved changes that will not be included in JSFiddle.&lt;br&gt;&lt;br&gt;Continue?" confirm-enable="email_template_form.$dirty" class="ng-isolate-scope">Use emailjs.sendForm()</li>
+<li ng:click="onTestTemplate(template, email_template_form.$dirty, &#39;jsfiddle&#39;, &#39;inline&#39;)" confirm="You have unsaved changes that will not be included in JSFiddle.&lt;br&gt;&lt;br&gt;Continue?" confirm-enable="email_template_form.$dirty" class="ng-isolate-scope">Use inline code</li>
+</ul>
+</div>
+<button type="button" class="secondary fa fa-envelope-o" ng:disabled="_idError || !email_template_form.$valid" ng:click="onTestTemplate(template, email_template_form.$dirty, &#39;local&#39;)">
+Test
+</button>
+<div class="save-button-block">
+<ej-tooltip label="This template has invalid field" ng:hide="email_template_form.$valid" class="ng-isolate-scope ng-hide"><div class="tooltip-component">
+<div class="tooltip-component-icon fa fa-info"></div>
+<div class="tooltip-component-popover ng-binding">This template has invalid field</div>
+</div></ej-tooltip>
+<button class="save-template-button fa fa-check-circle-o" async-loading="{flag: &#39;_saving&#39;}" ng-disabled="_idError || !email_template_form.$dirty || !email_template_form.$valid" ng-class="{&#39;disabled&#39;: _idError || !email_template_form.$dirty}" style="">
+Save
+</button>
+</div>
+</div>
+</h1>
+<div class="tabs" ng:init="_tab=&#39;content&#39;">
+<ul class="tab-selector">
+<li ng:click="_tab=&#39;content&#39;" ng:class="{selected: _tab==&#39;content&#39;}" class="selected">Content</li>
+<li ng:click="_tab=&#39;autoreply&#39;" ng:class="{selected: _tab==&#39;autoreply&#39;}">Auto-reply</li>
+<li ng:click="_tab=&#39;attachments&#39;" ng:class="{selected: _tab==&#39;attachments&#39;}">Attachments</li>
+<li ng:click="_tab=&#39;contacts&#39;" ng:class="{selected: _tab==&#39;contacts&#39;}">Contacts</li>
+<li ng:click="_tab=&#39;captcha&#39;" ng:class="{selected: _tab==&#39;captcha&#39;}">Captcha</li>
+<li ng:click="_tab=&#39;settings&#39;" ng:class="{selected: _tab==&#39;settings&#39;}">Settings</li>
+</ul>
+<div class="tab" ng:show="_tab==&#39;content&#39;">
+<table width="100%"><tbody><tr>
+<td>
+<div class="box">
+<label>Subject</label>
+<input type="text" ng:model="template.subject" required="" class="ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required">
+<br><br>
+<label>Content</label>
+<div id="mceu_459" class="mce-tinymce mce-container mce-panel" hidefocus="1" tabindex="-1" role="application" style="visibility: hidden; border-width: 1px;"><div id="mceu_459-body" class="mce-container-body mce-stack-layout"><div id="mceu_460" class="mce-toolbar-grp mce-container mce-panel mce-stack-layout-item mce-first" hidefocus="1" tabindex="-1" role="group"><div id="mceu_460-body" class="mce-container-body mce-stack-layout"><div id="mceu_461" class="mce-container mce-toolbar mce-stack-layout-item mce-first" role="toolbar"><div id="mceu_461-body" class="mce-container-body mce-flow-layout"><div id="mceu_462" class="mce-container mce-flow-layout-item mce-first mce-btn-group" role="group"><div id="mceu_462-body"><div id="mceu_434" class="mce-widget mce-btn mce-first" tabindex="-1" aria-labelledby="mceu_434" role="button" aria-label="Bold"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-bold"></i></button></div><div id="mceu_435" class="mce-widget mce-btn" tabindex="-1" aria-labelledby="mceu_435" role="button" aria-label="Italic"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-italic"></i></button></div><div id="mceu_436" class="mce-widget mce-btn" tabindex="-1" aria-labelledby="mceu_436" role="button" aria-label="Underline"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-underline"></i></button></div><div id="mceu_437" class="mce-widget mce-btn mce-last" tabindex="-1" aria-labelledby="mceu_437" role="button" aria-label="Strikethrough"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-strikethrough"></i></button></div></div></div><div id="mceu_463" class="mce-container mce-flow-layout-item mce-btn-group" role="group"><div id="mceu_463-body"><div id="mceu_438" class="mce-widget mce-btn mce-menubtn mce-fixed-width mce-listbox mce-first mce-btn-has-text" tabindex="-1" aria-labelledby="mceu_438" role="button" aria-label="Font Family" aria-haspopup="true"><button id="mceu_438-open" role="presentation" type="button" tabindex="-1"><span class="mce-txt">Font Family</span> <i class="mce-caret"></i></button></div><div id="mceu_439" class="mce-widget mce-btn mce-menubtn mce-fixed-width mce-listbox mce-last mce-btn-has-text" tabindex="-1" aria-labelledby="mceu_439" role="button" aria-label="Font Sizes" aria-haspopup="true"><button id="mceu_439-open" role="presentation" type="button" tabindex="-1"><span class="mce-txt">Font Sizes</span> <i class="mce-caret"></i></button></div></div></div><div id="mceu_464" class="mce-container mce-flow-layout-item mce-btn-group" role="group"><div id="mceu_464-body"><div id="mceu_440" class="mce-widget mce-btn mce-colorbutton mce-first" role="button" tabindex="-1" aria-haspopup="true" aria-label="Text color"><button role="presentation" hidefocus="1" type="button" tabindex="-1"><i class="mce-ico mce-i-forecolor"></i><span id="mceu_440-preview" class="mce-preview"></span></button><button type="button" class="mce-open" hidefocus="1" tabindex="-1"> <i class="mce-caret"></i></button></div><div id="mceu_441" class="mce-widget mce-btn mce-colorbutton mce-last" role="button" tabindex="-1" aria-haspopup="true" aria-label="Background color"><button role="presentation" hidefocus="1" type="button" tabindex="-1"><i class="mce-ico mce-i-backcolor"></i><span id="mceu_441-preview" class="mce-preview"></span></button><button type="button" class="mce-open" hidefocus="1" tabindex="-1"> <i class="mce-caret"></i></button></div></div></div><div id="mceu_465" class="mce-container mce-flow-layout-item mce-last mce-btn-group" role="group"><div id="mceu_465-body"><div id="mceu_442" class="mce-widget mce-btn mce-first" tabindex="-1" aria-labelledby="mceu_442" role="button" aria-label="Align left"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-alignleft"></i></button></div><div id="mceu_443" class="mce-widget mce-btn" tabindex="-1" aria-labelledby="mceu_443" role="button" aria-label="Align center"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-aligncenter"></i></button></div><div id="mceu_444" class="mce-widget mce-btn" tabindex="-1" aria-labelledby="mceu_444" role="button" aria-label="Align right"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-alignright"></i></button></div><div id="mceu_445" class="mce-widget mce-btn mce-last" tabindex="-1" aria-labelledby="mceu_445" role="button" aria-label="Justify"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-alignjustify"></i></button></div></div></div></div></div><div id="mceu_466" class="mce-container mce-toolbar mce-stack-layout-item mce-last" role="toolbar"><div id="mceu_466-body" class="mce-container-body mce-flow-layout"><div id="mceu_467" class="mce-container mce-flow-layout-item mce-first mce-btn-group" role="group"><div id="mceu_467-body"><div id="mceu_446" class="mce-widget mce-btn mce-first" tabindex="-1" aria-labelledby="mceu_446" role="button" aria-label="Bullet list"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-bullist"></i></button></div><div id="mceu_447" class="mce-widget mce-btn" tabindex="-1" aria-labelledby="mceu_447" role="button" aria-label="Numbered list"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-numlist"></i></button></div><div id="mceu_448" class="mce-widget mce-btn" tabindex="-1" aria-labelledby="mceu_448" role="button" aria-label="Blockquote"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-blockquote"></i></button></div><div id="mceu_449" class="mce-widget mce-btn" tabindex="-1" aria-labelledby="mceu_449" role="button" aria-label="Decrease indent"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-outdent"></i></button></div><div id="mceu_450" class="mce-widget mce-btn mce-last" tabindex="-1" aria-labelledby="mceu_450" role="button" aria-label="Increase indent"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-indent"></i></button></div></div></div><div id="mceu_468" class="mce-container mce-flow-layout-item mce-btn-group" role="group"><div id="mceu_468-body"><div id="mceu_451" class="mce-widget mce-btn mce-first" tabindex="-1" aria-labelledby="mceu_451" role="button" aria-label="Insert/edit link"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-link"></i></button></div><div id="mceu_452" class="mce-widget mce-btn mce-last" tabindex="-1" aria-labelledby="mceu_452" role="button" aria-label="Remove link"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-unlink"></i></button></div></div></div><div id="mceu_469" class="mce-container mce-flow-layout-item mce-btn-group" role="group"><div id="mceu_469-body"><div id="mceu_453" class="mce-widget mce-btn mce-first mce-last" tabindex="-1" aria-labelledby="mceu_453" role="button" aria-label="Insert/edit image"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-image"></i></button></div></div></div><div id="mceu_470" class="mce-container mce-flow-layout-item mce-btn-group" role="group"><div id="mceu_470-body"><div id="mceu_454" class="mce-widget mce-btn mce-first" tabindex="-1" aria-labelledby="mceu_454" role="button" aria-label="Undo" aria-disabled="false"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-undo"></i></button></div><div id="mceu_455" class="mce-widget mce-btn mce-last mce-disabled" tabindex="-1" aria-labelledby="mceu_455" role="button" aria-label="Redo" aria-disabled="true"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-redo"></i></button></div></div></div><div id="mceu_471" class="mce-container mce-flow-layout-item mce-btn-group" role="group"><div id="mceu_471-body"><div id="mceu_456" class="mce-widget mce-btn mce-first mce-last" tabindex="-1" aria-labelledby="mceu_456" role="button" aria-label="Source code"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-code"></i></button></div></div></div><div id="mceu_472" class="mce-container mce-flow-layout-item mce-last mce-btn-group" role="group"><div id="mceu_472-body"><div id="mceu_457" class="mce-widget mce-btn mce-first" tabindex="-1" aria-labelledby="mceu_457" role="button" aria-label="Preview"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-preview"></i></button></div><div id="mceu_458" class="mce-widget mce-btn mce-last" tabindex="-1" aria-labelledby="mceu_458" role="button" aria-label="Fullscreen"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-fullscreen"></i></button></div></div></div></div></div></div></div><div id="mceu_473" class="mce-edit-area mce-container mce-panel mce-stack-layout-item" hidefocus="1" tabindex="-1" role="group" style="border-width: 1px 0px 0px;"><iframe id="ui-tinymce-10_ifr" frameborder="0" allowtransparency="true" title="Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press ALT-0 for help" src="javascript:&quot;&quot;" style="width: 100%; height: 542px; display: block;" src="./Email template editor - EmailJS_files/saved_resource.html"></iframe></div><div id="mceu_474" class="mce-statusbar mce-container mce-panel mce-stack-layout-item mce-last" hidefocus="1" tabindex="-1" role="group" style="border-width: 1px 0px 0px;"><div id="mceu_474-body" class="mce-container-body mce-flow-layout"><div id="mceu_475" class="mce-path mce-flow-layout-item mce-first"><div role="button" class="mce-path-item mce-last" data-index="0" tabindex="-1" id="mceu_475-0" aria-level="0">p</div></div><div id="mceu_476" class="mce-flow-layout-item mce-last mce-resizehandle"><i class="mce-ico mce-i-resize"></i></div></div></div></div></div><textarea rows="40" ui-tinymce="tinymceOptions" ng-change="contentChanged(template, template.content)" ng-model="template.content" class="ng-untouched ng-valid ng-not-empty ng-valid-parse ng-dirty" id="ui-tinymce-10" aria-hidden="true" style="display: none;"></textarea>
+</div>
+</td>
+<td width="30">&nbsp;</td>
+<td width="400">
+<div class="box">
+<label>To email</label>
+<input type="text" ng:model="template.to_email" required="" class="ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required">
+<br>
+<label>From name (optional)</label>
+<input type="text" ng:model="template.from_name" class="ng-pristine ng-untouched ng-valid ng-not-empty">
+<br>
+<label>From email (optional)</label>
+<label class="param-enable">
+<input type="checkbox" ng:model="template.use_default_from_email" class="ng-pristine ng-untouched ng-valid ng-empty">
+Use default email address
+</label>
+<input type="text" ng:model="template.from_email" placeholder="" ng:class="{disabled: template.use_default_from_email}" class="ng-pristine ng-untouched ng-valid ng-not-empty">
+<br>
+<label>Reply to (optional)</label>
+<input type="text" ng:model="template.reply_to" class="ng-pristine ng-untouched ng-valid ng-not-empty">
+<br>
+<label>Bcc (optional)</label>
+<input type="text" ng:model="template.bcc" class="ng-pristine ng-untouched ng-valid ng-empty">
+<br>
+<label>cc (optional)</label>
+<input type="text" ng:model="template.cc" class="ng-pristine ng-untouched ng-valid ng-empty">
+<br>
+</div>
+<br><br>
+</td>
+</tr></tbody></table>
+</div>
+<div class="tab ng-hide" ng:show="_tab==&#39;autoreply&#39;">
+<div class="box">
+<div class="checkbox">
+<label>
+<input type="checkbox" ng:model="template.auto_reply" class="ng-pristine ng-untouched ng-valid ng-empty">
+Enable auto-reply
+</label>
+</div>
+<br>
+<div class="note fa fa-info" style="margin: 0;">
+Enable auto-reply to automatically send a reply to the user who submitted the email request.
+<br>
+NOTE: this will consume additional email quota.
+</div>
+</div>
+<br>
+<table width="100%" ng:class="{disabled: !template.auto_reply}" class="disabled"><tbody><tr>
+<td>
+<div class="box">
+<label>Subject</label>
+<input type="text" ng:model="template.auto_reply_params.subject" ng:required="template.auto_reply" class="ng-pristine ng-untouched ng-empty ng-valid ng-valid-required">
+<br><br>
+<label>Content</label>
+<div id="mceu_502" class="mce-tinymce mce-container mce-panel" hidefocus="1" tabindex="-1" role="application" style="visibility: hidden; border-width: 1px;"><div id="mceu_502-body" class="mce-container-body mce-stack-layout"><div id="mceu_503" class="mce-toolbar-grp mce-container mce-panel mce-stack-layout-item mce-first" hidefocus="1" tabindex="-1" role="group"><div id="mceu_503-body" class="mce-container-body mce-stack-layout"><div id="mceu_504" class="mce-container mce-toolbar mce-stack-layout-item mce-first" role="toolbar"><div id="mceu_504-body" class="mce-container-body mce-flow-layout"><div id="mceu_505" class="mce-container mce-flow-layout-item mce-first mce-btn-group" role="group"><div id="mceu_505-body"><div id="mceu_477" class="mce-widget mce-btn mce-first" tabindex="-1" aria-labelledby="mceu_477" role="button" aria-label="Bold"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-bold"></i></button></div><div id="mceu_478" class="mce-widget mce-btn" tabindex="-1" aria-labelledby="mceu_478" role="button" aria-label="Italic"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-italic"></i></button></div><div id="mceu_479" class="mce-widget mce-btn" tabindex="-1" aria-labelledby="mceu_479" role="button" aria-label="Underline"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-underline"></i></button></div><div id="mceu_480" class="mce-widget mce-btn mce-last" tabindex="-1" aria-labelledby="mceu_480" role="button" aria-label="Strikethrough"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-strikethrough"></i></button></div></div></div><div id="mceu_506" class="mce-container mce-flow-layout-item mce-btn-group" role="group"><div id="mceu_506-body"><div id="mceu_481" class="mce-widget mce-btn mce-menubtn mce-fixed-width mce-listbox mce-first mce-btn-has-text" tabindex="-1" aria-labelledby="mceu_481" role="button" aria-label="Font Family" aria-haspopup="true"><button id="mceu_481-open" role="presentation" type="button" tabindex="-1"><span class="mce-txt">Font Family</span> <i class="mce-caret"></i></button></div><div id="mceu_482" class="mce-widget mce-btn mce-menubtn mce-fixed-width mce-listbox mce-last mce-btn-has-text" tabindex="-1" aria-labelledby="mceu_482" role="button" aria-label="Font Sizes" aria-haspopup="true"><button id="mceu_482-open" role="presentation" type="button" tabindex="-1"><span class="mce-txt">Font Sizes</span> <i class="mce-caret"></i></button></div></div></div><div id="mceu_507" class="mce-container mce-flow-layout-item mce-btn-group" role="group"><div id="mceu_507-body"><div id="mceu_483" class="mce-widget mce-btn mce-colorbutton mce-first" role="button" tabindex="-1" aria-haspopup="true" aria-label="Text color"><button role="presentation" hidefocus="1" type="button" tabindex="-1"><i class="mce-ico mce-i-forecolor"></i><span id="mceu_483-preview" class="mce-preview"></span></button><button type="button" class="mce-open" hidefocus="1" tabindex="-1"> <i class="mce-caret"></i></button></div><div id="mceu_484" class="mce-widget mce-btn mce-colorbutton mce-last" role="button" tabindex="-1" aria-haspopup="true" aria-label="Background color"><button role="presentation" hidefocus="1" type="button" tabindex="-1"><i class="mce-ico mce-i-backcolor"></i><span id="mceu_484-preview" class="mce-preview"></span></button><button type="button" class="mce-open" hidefocus="1" tabindex="-1"> <i class="mce-caret"></i></button></div></div></div><div id="mceu_508" class="mce-container mce-flow-layout-item mce-last mce-btn-group" role="group"><div id="mceu_508-body"><div id="mceu_485" class="mce-widget mce-btn mce-first" tabindex="-1" aria-labelledby="mceu_485" role="button" aria-label="Align left"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-alignleft"></i></button></div><div id="mceu_486" class="mce-widget mce-btn" tabindex="-1" aria-labelledby="mceu_486" role="button" aria-label="Align center"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-aligncenter"></i></button></div><div id="mceu_487" class="mce-widget mce-btn" tabindex="-1" aria-labelledby="mceu_487" role="button" aria-label="Align right"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-alignright"></i></button></div><div id="mceu_488" class="mce-widget mce-btn mce-last" tabindex="-1" aria-labelledby="mceu_488" role="button" aria-label="Justify"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-alignjustify"></i></button></div></div></div></div></div><div id="mceu_509" class="mce-container mce-toolbar mce-stack-layout-item mce-last" role="toolbar"><div id="mceu_509-body" class="mce-container-body mce-flow-layout"><div id="mceu_510" class="mce-container mce-flow-layout-item mce-first mce-btn-group" role="group"><div id="mceu_510-body"><div id="mceu_489" class="mce-widget mce-btn mce-first" tabindex="-1" aria-labelledby="mceu_489" role="button" aria-label="Bullet list"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-bullist"></i></button></div><div id="mceu_490" class="mce-widget mce-btn" tabindex="-1" aria-labelledby="mceu_490" role="button" aria-label="Numbered list"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-numlist"></i></button></div><div id="mceu_491" class="mce-widget mce-btn" tabindex="-1" aria-labelledby="mceu_491" role="button" aria-label="Blockquote"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-blockquote"></i></button></div><div id="mceu_492" class="mce-widget mce-btn" tabindex="-1" aria-labelledby="mceu_492" role="button" aria-label="Decrease indent"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-outdent"></i></button></div><div id="mceu_493" class="mce-widget mce-btn mce-last" tabindex="-1" aria-labelledby="mceu_493" role="button" aria-label="Increase indent"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-indent"></i></button></div></div></div><div id="mceu_511" class="mce-container mce-flow-layout-item mce-btn-group" role="group"><div id="mceu_511-body"><div id="mceu_494" class="mce-widget mce-btn mce-first" tabindex="-1" aria-labelledby="mceu_494" role="button" aria-label="Insert/edit link"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-link"></i></button></div><div id="mceu_495" class="mce-widget mce-btn mce-last" tabindex="-1" aria-labelledby="mceu_495" role="button" aria-label="Remove link"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-unlink"></i></button></div></div></div><div id="mceu_512" class="mce-container mce-flow-layout-item mce-btn-group" role="group"><div id="mceu_512-body"><div id="mceu_496" class="mce-widget mce-btn mce-first mce-last" tabindex="-1" aria-labelledby="mceu_496" role="button" aria-label="Insert/edit image"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-image"></i></button></div></div></div><div id="mceu_513" class="mce-container mce-flow-layout-item mce-btn-group" role="group"><div id="mceu_513-body"><div id="mceu_497" class="mce-widget mce-btn mce-first mce-disabled" tabindex="-1" aria-labelledby="mceu_497" role="button" aria-label="Undo" aria-disabled="true"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-undo"></i></button></div><div id="mceu_498" class="mce-widget mce-btn mce-last mce-disabled" tabindex="-1" aria-labelledby="mceu_498" role="button" aria-label="Redo" aria-disabled="true"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-redo"></i></button></div></div></div><div id="mceu_514" class="mce-container mce-flow-layout-item mce-btn-group" role="group"><div id="mceu_514-body"><div id="mceu_499" class="mce-widget mce-btn mce-first mce-last" tabindex="-1" aria-labelledby="mceu_499" role="button" aria-label="Source code"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-code"></i></button></div></div></div><div id="mceu_515" class="mce-container mce-flow-layout-item mce-last mce-btn-group" role="group"><div id="mceu_515-body"><div id="mceu_500" class="mce-widget mce-btn mce-first" tabindex="-1" aria-labelledby="mceu_500" role="button" aria-label="Preview"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-preview"></i></button></div><div id="mceu_501" class="mce-widget mce-btn mce-last" tabindex="-1" aria-labelledby="mceu_501" role="button" aria-label="Fullscreen"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-fullscreen"></i></button></div></div></div></div></div></div></div><div id="mceu_516" class="mce-edit-area mce-container mce-panel mce-stack-layout-item" hidefocus="1" tabindex="-1" role="group" style="border-width: 1px 0px 0px;"><iframe id="ui-tinymce-11_ifr" frameborder="0" allowtransparency="true" title="Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press ALT-0 for help" src="javascript:&quot;&quot;" style="width: 100%; height: 100px; display: block;" src="./Email template editor - EmailJS_files/saved_resource(1).html"></iframe></div><div id="mceu_517" class="mce-statusbar mce-container mce-panel mce-stack-layout-item mce-last" hidefocus="1" tabindex="-1" role="group" style="border-width: 1px 0px 0px;"><div id="mceu_517-body" class="mce-container-body mce-flow-layout"><div id="mceu_518" class="mce-path mce-flow-layout-item mce-first"><div role="button" class="mce-path-item mce-last" data-index="0" tabindex="-1" id="mceu_518-0" aria-level="0">p</div></div><div id="mceu_519" class="mce-flow-layout-item mce-last mce-resizehandle"><i class="mce-ico mce-i-resize"></i></div></div></div></div></div><textarea rows="40" ui-tinymce="tinymceOptions" ng-change="autoReplyContentChanged(template, template.auto_reply_params.content)" ng-model="template.auto_reply_params.content" class="ng-pristine ng-untouched ng-valid ng-empty" id="ui-tinymce-11" aria-hidden="true" style="display: none;"></textarea>
+</div>
+</td>
+<td width="30">&nbsp;</td>
+<td width="400">
+<div class="box">
+<label>To email</label>
+<input type="text" ng:model="template.auto_reply_params.to_email" ng:required="template.auto_reply" class="ng-pristine ng-untouched ng-empty ng-valid ng-valid-required">
+<label>From email</label>
+<input type="text" ng:model="template.auto_reply_params.from_email" ng:required="template.auto_reply" class="ng-pristine ng-untouched ng-empty ng-valid ng-valid-required">
+<label>From name (optional)</label>
+<input type="text" ng:model="template.auto_reply_params.from_name" class="ng-pristine ng-untouched ng-valid ng-empty">
+</div>
+</td>
+</tr></tbody></table>
+</div>
+<div class="tab ng-hide" ng:show="_tab==&#39;attachments&#39;">
+<div class="box" id="static-attachments">
+<h2>Static Attachments</h2>
+<!-- ngRepeat: static_attachment in template.static_attachments track by $index -->
+<button type="button" ng:click="addStaticAttachment(email_template_form)">Add attachment</button>
+</div>
+<br><br>
+<div class="box">
+<h2>Dynamic Attachments</h2>
+<!-- ngRepeat: attachment in template.attachments -->
+<button type="button" ng:click="addAttachment(email_template_form)">Add attachment</button>
+</div>
+</div>
+<div class="tab ng-hide" ng:show="_tab==&#39;contacts&#39;">
+<div class="box">
+<div class="checkbox">
+<label>
+<input type="checkbox" ng:model="template.add_contact" class="ng-pristine ng-untouched ng-valid ng-empty">
+Add contacts to "Contact list"
+</label>
+<br>
+</div>
+<div ng:class="{disabled: !template.add_contact}" class="disabled">
+<div class="note fa fa-info" style="margin-bottom: 20px;">
+Select parameters to be added to the list.
+<br>
+NOTE: email is a required parameter.
+</div>
+<label>Email</label>
+<input type="text" ng:model="template.add_contact_params.email" placeholder="{{email}}" ng:required="template.add_contact" class="ng-pristine ng-untouched ng-empty ng-valid ng-valid-required">
+<label>Name (optional)</label>
+<input type="text" ng:model="template.add_contact_params.name" placeholder="{{name}}" class="ng-pristine ng-untouched ng-valid ng-empty">
+<label>Address (optional)</label>
+<input type="text" ng:model="template.add_contact_params.address" placeholder="{{address}}" class="ng-pristine ng-untouched ng-valid ng-empty">
+<label>Phone (optional)</label>
+<input type="text" ng:model="template.add_contact_params.phone" placeholder="{{phone}}" class="ng-pristine ng-untouched ng-valid ng-empty">
+</div>
+</div>
+</div>
+<div class="tab ng-hide" ng:show="_tab==&#39;captcha&#39;">
+<div class="box">
+<div class="checkbox">
+<label>
+<input type="checkbox" ng:model="template.captcha" class="ng-pristine ng-untouched ng-valid ng-empty">
+Require reCAPTCHA V2 verification
+</label>
+</div>
+<div ng:class="{disabled: !template.captcha}" class="disabled">
+<br><br>
+<label>reCAPTCHA secret key:</label>
+<input type="text" ng:model="template.captcha_secret" ng-class="{&#39;disabled&#39;: !template.captcha}" ng:required="template.captcha" class="ng-pristine ng-untouched ng-empty disabled ng-valid ng-valid-required">
+<div class="note fa fa-info">
+Obtain your Google reCAPTCHA key <a href="https://www.google.com/recaptcha/intro/index.html" target="_blank">here</a>.
+<br>
+To display the CAPTCHA on your site follow the instructions from the reCAPTCHA dashboard.
+</div>
+<br>
+</div>
+</div>
+</div>
+<div class="tab ng-hide" ng:show="_tab==&#39;settings&#39;">
+<div class="box">
+<div>
+<label style="display: inline-block">Template ID:</label>
+<editable-field ng:model="template.id" validate="validateId(value)" class="ng-pristine ng-untouched ng-valid ng-isolate-scope ng-not-empty"><span class="value">taagorders</span><a class="action icon onhover fa fa-pencil"></a></editable-field>
+</div>
+<div class="meta-data-only-block">
+<ej-checkbox uid="meta-data-only" label="Privacy protection:" ng-model="template.meta_only" on-change="saveMetaOnly(template, value)" class="ng-pristine ng-untouched ng-valid ng-isolate-scope ng-not-empty"><div class="checkbox-input-component">
+<label for="meta-data-only" class="checkbox-input-label ng-binding">Privacy protection:</label>
+<label for="meta-data-only" class="checkbox-input-box">
+<input id="meta-data-only" type="checkbox" class="checkbox-input-element ng-pristine ng-untouched ng-valid ng-empty" ng-model="ejCheckboxCtrl.ngModel" ng-change="ejCheckboxCtrl.onChecked(ejCheckboxCtrl.ngModel)">
+<span class="checkbox-pin"></span>
+</label>
+</div></ej-checkbox>
+<div class="note fa fa-info">
+IMPORTANT: the privacy protection option allows to save only metadata.
+<br>
+All private template parameters won't be saved. The resend option for the template will be disabled.
+</div>
+</div>
+</div>
+</div>
+</div>
+</form>
+<form id="jsfiddle-form" class="invisible ng-pristine ng-valid ng-scope" action="https://jsfiddle.net/api/post/library/pure/" target="_blank" method="POST">
+<textarea type="text" id="html" name="html"></textarea>
+<textarea type="text" id="js" name="js"></textarea>
+<textarea type="text" id="css" name="css"></textarea>
+<textarea type="text" id="panel_html" name="panel_html"></textarea>
+<textarea type="text" id="panel_js" name="panel_js"></textarea>
+<textarea type="text" id="panel_css" name="panel_css"></textarea>
+<textarea type="text" id="title" name="title"></textarea>
+<textarea type="text" id="description" name="description"></textarea>
+<textarea type="text" id="wrap" name="wrap"></textarea>
+</form>
+<!-- ngIf: _dialog --></div>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div><!-- end ngIf: user -->
+<script src="./Email template editor - EmailJS_files/vendor-ae6fb64b81.js"></script>
+<script src="./Email template editor - EmailJS_files/inffuse.js" type="text/javascript"></script>
+<script src="./Email template editor - EmailJS_files/email.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="./Email template editor - EmailJS_files/tinymce.min.js"></script>
+<script type="text/javascript" src="./Email template editor - EmailJS_files/tinymce.js"></script>
+<script src="./Email template editor - EmailJS_files/app-13888ac2e1.js"></script>
+
+<iframe data-product="web_widget" title="No content" tabindex="-1" aria-hidden="true" src="./Email template editor - EmailJS_files/saved_resource(2).html" style="width: 0px; height: 0px; border: 0px; position: absolute; top: -9999px;"></iframe><div><iframe title="Opens a widget where you can chat to one of our agents" id="launcher" tabindex="0" class="zEWidget-launcher zEWidget-launcher--active" style="border: none; background: transparent; z-index: 999998; transform: translateZ(0px); position: fixed; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1); transition-property: opacity, top, bottom; opacity: 1; height: 50px; max-height: 551px; min-height: 50px; margin: 10px 20px; right: 0px; bottom: 0px; width: 113px;width: 113px;width: 113px;width: 113px;width: 113px;" src="./Email template editor - EmailJS_files/saved_resource(3).html"></iframe></div><div><iframe title="Find more information here" id="webWidget" tabindex="-1" class="zEWidget-webWidget " style="border: none; background: transparent; z-index: 999999; transform: translateZ(0px); position: fixed; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1); transition-property: opacity, top, bottom; opacity: 0; width: 357px; height: 100%; max-height: 565px; min-height: 150px; margin-left: 8px; margin-right: 8px; top: -9999px; visibility: hidden;" src="./Email template editor - EmailJS_files/saved_resource(4).html"></iframe></div><style id="HW_styles_cont">.HW_badge_cont {
+  visibility: hidden;
+  pointer-events: none;
+  display: block;
+  height: 32px;
+  width: 32px;
+  cursor: pointer;
+  position: relative;
+}
+
+.HW_badge_cont.HW_visible {
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.HW_badge {
+  display: block;
+  border-radius: 20px;
+  background: #CD4B5B;
+  height: 16px;
+  width: 16px;
+  color: #fff;
+  text-align: center;
+  line-height: 16px;
+  font-size: 11px;
+  cursor: pointer;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.3s;
+}
+
+.HW_badge.HW_softHidden {
+  background: #d4d4d4;
+  opacity: 1;
+  transform: scale(0.6);
+}
+
+.HW_badge.HW_hidden {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.HW_badge.HW_visible {
+  opacity: 1;
+  transform: scale(1.0);
+}
+
+.HW_frame_cont {
+  pointer-events: none;
+  border-radius: 4px;
+  box-shadow: 0 0 1px rgba(99, 114, 130, 0.32), 0 8px 16px rgba(27, 39, 51, 0.08);
+  background: #fff;
+  border: none;
+  position: absolute;
+  top: -900em;
+  z-index: 2147483647;
+  width: 340px;
+  height: 0;
+  opacity: 0;
+  will-change: height, margin-top, opacity;
+  margin-top: -10px;
+  transition: margin-top 0.15s ease-out, opacity 0.1s ease-out;
+}
+
+#HW_frame_cont.HW_bottom {
+  transition: margin-top 0.15s ease-out, opacity 0.1s ease-out, height 0.3s ease-out;
+}
+
+.HW_frame_cont.HW_visible {
+  opacity: 1;
+  pointer-events: auto;
+  margin-top: 0px;
+}
+
+.HW_frame {
+  background: #fff;
+  border: none;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 4px;
+  position: relative;
+  z-index: 2147483647;
+  transition: height 0.3s ease-out;
+}
+
+.HW_frame_cont.HW_embed {
+  position: static;
+  margin-top: 0;
+}</style><div id="HW_frame_cont" class="HW_frame_cont HW_bottom" data-account="RyEW27" style="height: 270px;"><iframe id="HW_frame" class="HW_frame" src="./Email template editor - EmailJS_files/RyEW27.html" sandbox="allow-same-origin allow-scripts allow-top-navigation allow-popups allow-forms allow-popups-to-escape-sandbox" tabindex="-1" aria-hidden="true" style="height: 270px;"></iframe></div><div style="background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 3px; position: absolute; transition: visibility 0s linear 0.3s, opacity 0.3s linear 0s; opacity: 0; visibility: hidden; z-index: 2000000000; left: 0px; top: -10000px;"><div style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: rgb(255, 255, 255); opacity: 0.05;"></div><div class="g-recaptcha-bubble-arrow" style="border: 11px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 2000000000;"></div><div class="g-recaptcha-bubble-arrow" style="border: 10px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -10px; z-index: 2000000000;"></div><div style="z-index: 2000000000; position: relative;"><iframe title="recaptcha challenge" src="./Email template editor - EmailJS_files/bframe.html" name="c-prtd3edp18v0" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox" style="width: 100%; height: 100%;"></iframe></div></div><div id="mceu_520" class="mce-widget mce-tooltip mce-tooltip-n" role="presentation" style="left: 559px; top: 383px; z-index: 131070; display: none;"><div class="mce-tooltip-arrow"></div><div class="mce-tooltip-inner">Insert/edit image</div></div></body></html>
